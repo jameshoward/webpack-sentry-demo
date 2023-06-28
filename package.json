@@ -1,0 +1,21 @@
+{
+  "name": "webpack-stats",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@sentry/webpack-plugin": "^2.4.0",
+    "webpack": "^5.88.0",
+    "webpack-bundle-analyzer": "^4.9.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "simple-test-package": "^0.2.2"
+  },
+  "scripts": {
+    "clean": "rm -rf dist/",
+    "build": "webpack build --mode=production",
+    "preanalyze": "rm -rf dist/ && webpack build --mode=production --json=stats.json",
+    "analyze": "webpack-bundle-analyzer stats.json dist/"
+  }
+}
